@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;800&family=Ysabeau+Infant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;800&family=Poppins&family=Ysabeau+Infant&display=swap');
+
+:root {
+  --font: 'Poppins', sans-serif;
+  --color-purple-dark: #181626;
+  --color-purple-light: #695dd8;
+  --color-white: #f2f1f3;
+  --color-grey-light: #c0c0c0;
+}
+
+.item-list {
+  list-style: none;
+}
+
+.navbar-container {
+  position: absolute;
+  z-index: 100;
+  padding-top: 1.5vh;
+  max-height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.list-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10vw;
+}   
+
+.list-container li {
+  font-family: var(--font);
+  list-style: none;
+  padding: 0 25px;
+  position: relative;
+}
+
+
+.list-container li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 200;
+  color: var(--color-white);
+  transition: 0.2s ease-in-out;
+}
+
+.list-container li a:hover {
+  color: var(--color-purple-light)
+}
+
+button {
+  background-color: var(--color-purple-light);
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  margin-left: 80px;
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: var(--font);
+  transition: 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: var(--color-white);
+  color: var(--color-purple-light);
+  font-weight: 400;
+}
+
+.navbar-logo-container {
+  padding-left: 10vw;
+}
