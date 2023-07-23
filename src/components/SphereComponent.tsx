@@ -1,7 +1,5 @@
 import { Canvas } from '@react-three/fiber'
 import { MeshDistortMaterial, Sphere, OrbitControls} from '@react-three/drei';
-import 'styles/FirstSection.css'
-
 
 const SphereComponent = () => {
   return (

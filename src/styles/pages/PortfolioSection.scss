@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;800&family=Ysabeau+Infant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;800&family=Poppins&family=Ysabeau+Infant&display=swap');
+
+.portfolio-section-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.portfolio-layout-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.portfolio-section-title {
+  margin-bottom: 10px;
+}
+
+.view-more-container {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  > .view-more-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 600;
+    width: 100px;
+    height: 50px;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      animation: animate 1s infinite ease-in-out alternate;
+      font-weight: 600;
+    }
+
+    > .view-more-text {
+      margin: 0;
+      font: $font;
+    }
+
+    > .tabler-icon-caret-down {
+      fill: $color-white;
+    }
+  }
+
+}
+
+@keyframes animate {
+  to{
+    transform: translateY(-10px)
+  }
+}
+
+
+

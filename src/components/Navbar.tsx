@@ -1,18 +1,21 @@
-import 'styles/Navbar.css'
+import { Link, Button } from 'react-scroll'
 
 const Navbar = () => {
+  
   return (
     <>
       <div className="navbar-container">
         <div className="navbar-logo-container">
-          <p>LOGO</p>
-				  {/*<img className='navbar-logo' src="" alt="" /> */}
-				</div>
+          <img className='navbar-logo' src="/src/assets/Personal-logo.png" alt="" />
+        </div>
         <ul className="list-container">
-          <li className="item-list"> <a href="">Home</a> </li>
-          <li className="item-list"> <a href="">About</a> </li>
-          <li className="item-list"> <a href="">Projects</a> </li>
-          <button>Contact me</button>
+          <li className="item-list"> 
+            <Link to="projects" spy={true} smooth={true} offset={0} duration={500}>Projects</Link> 
+          </li>
+          <li className="item-list"> 
+            <Link to="about" spy={true} smooth={true} offset={0} duration={500}>About</Link> 
+          </li>
+          <Button className="button" type='submit' value="Contact Me" to="contact-me" spy={true} smooth={true} duration={500} />
         </ul>
       </div>
     </>

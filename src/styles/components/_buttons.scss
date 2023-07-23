@@ -1,0 +1,43 @@
+.button {
+  background-color: $color-purple-light;
+  border: none;
+  color: $color-white;
+  cursor: pointer;
+  margin-left: 80px;
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: $font;
+  transition: 0.2s ease-in-out;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-purple-light;
+    font-weight: 400;
+  }
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
+}
+
+.download-cv, .portfolio {
+  margin: 0;
+}
+
+.download-cv {
+  background-color: $color-white;
+  color: $color-purple-light;
+
+  &:hover {
+    background-color: $color-purple-light;
+    color: $color-white;
+  }
+}
+
