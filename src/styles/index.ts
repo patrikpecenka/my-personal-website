@@ -1,2 +1,2 @@
-import './index.css';
-import './App.css'
+import './_index.scss';
+import '../styles/pages/_app.scss'

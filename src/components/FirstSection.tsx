@@ -1,9 +1,9 @@
-import 'styles/FirstSection.css'
 import SphereComponent from './SphereComponent'
+import { Button } from 'react-scroll'
+
 
 const FirstSection = () => {
   return (
-    
     <div className="first-section-wrapper">
 
       {/*left side of first section with introduction and some links and buttons*/}
@@ -21,8 +21,11 @@ const FirstSection = () => {
           Donec iaculis gravida nulla. Fusce consectetuer risus a nunc.
         </h3>
         <div className="button-container">
-          <button className="Hit-me-up">Hit me up!</button>
-          <button className="download-cv">Download CV</button>
+        <Button className="button portfolio" type='submit' value="My Projects" to="projects" spy={true} smooth={true} duration={500} />
+          <a href="/src/assets/CV-Patrik-Pecenka.pdf" rel="noreferrer" target="_blank">
+            <button className="button download-cv">Download CV</button>
+          </a>
+          {/*<button className="Hit-me-up">Hit Me Up!</button>*/}
         </div>
       </div>
 

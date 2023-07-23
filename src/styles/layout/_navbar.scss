@@ -1,0 +1,56 @@
+@import '../abstracts/colors';
+@import '../abstracts/fonts';
+
+.item-list {
+  list-style: none;
+  cursor: pointer;
+}
+
+.navbar-container {
+  position: absolute;
+  z-index: 100;
+  padding-top: 1.5vh;
+  max-height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.list-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10vw;
+}   
+
+.list-container li {
+  font-family: $font;
+  list-style: none;
+  padding: 0 25px;
+  position: relative;
+}
+
+.list-container li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 200;
+  color: $color-white;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: $color-purple-light;
+  }
+}
+
+.navbar-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10vw;
+}
+
+.navbar-logo-container img {
+  width: 40px;
+}

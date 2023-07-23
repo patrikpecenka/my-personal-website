@@ -1,0 +1,25 @@
+// Base
+@import "/src/styles/index";
+
+
+// Layout
+@import "/src/styles/layout/footer";
+@import "/src/styles/layout/navbar";
+@import "/src/styles/layout/contactForm";
+
+// Abstract
+@import "/src/styles/abstracts/colors";
+@import "/src/styles/abstracts/fonts";
+
+// Components
+@import "/src/styles/components/buttons";
+@import "/src/styles/components/card";
+// Themes
+
+
+// Pages
+@import "/src/styles/pages/app";
+@import "/src/styles/pages/FirstSection.scss";
+@import "/src/styles/pages/AboutSection.scss";
+@import "/src/styles/pages/PortfolioSection.scss";
+

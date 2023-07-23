@@ -1,5 +1,4 @@
 import AppShell from './AppShell'
-import 'styles/App.css'
 
 let tabTitle = document.title;
 
