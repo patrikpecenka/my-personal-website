@@ -32,7 +32,7 @@ const FirstSection = () => {
       {/*right side of first section with 3d rotating cube and AI generated image of myself*/}
       <div className="threejs-image-container">
         <SphereComponent />
-        <img className="pfp-image" src={myImg} alt="" />
+        <img className="pfp-image" src={myImg} alt="Vector" />
       </div>
     </div>
   )
