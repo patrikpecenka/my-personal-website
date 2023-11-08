@@ -7,7 +7,7 @@ const SphereComponent = () => {
         <OrbitControls enableZoom={false} />
         <ambientLight intensity={0.4} />
         <directionalLight position={[2, 2, 1]}/>
-        <Sphere args={[1, 100, 100]} scale={1}>
+        <Sphere args={[1, 50, 50]} scale={1}>
           <MeshDistortMaterial
             color="#695dd8"
             attach="material"

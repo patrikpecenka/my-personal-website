@@ -1,8 +1,7 @@
-
 const AboutSection = () => {
 
   return (
-    <div id="about" className="about-section-wrapper">  
+    <div id="about" className="about-section-wrapper hidden-about">  
       <div className="about-section-container">
         <h1 className="about-section-title">
           About Me          

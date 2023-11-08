@@ -6,4 +6,43 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin: 0px 15vw;
+}
+
+//left side
+.information-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.information-container {
+  background-color: $color-grey-2;
+  height: 70vh;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+//right side 
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.form-container {
+  width: 100%;
+  height: 70vh;
+  background-color: $color-grey-2;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+[data-highlight="highlight"] {
+  color: $color-purple-light;
 }
