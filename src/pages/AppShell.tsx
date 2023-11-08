@@ -1,5 +1,4 @@
 import Navbar from "components/Navbar";
-import Footer from "components/Footer";
 import FirstSection from "components/FirstSection";
 import AboutSection from "components/AboutSection";
 import PortfolioSection from "components/PortfolioSection";
@@ -13,7 +12,6 @@ const AppShell = () => {
       <AboutSection/>
       <PortfolioSection/>
       <ContactForm/>
-      <Footer/>
     </>
   )
 
