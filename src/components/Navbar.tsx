@@ -1,4 +1,5 @@
 import { Link, Button } from 'react-scroll'
+import navLogo from '/Personal-logo.png'
 
 const Navbar = () => {
   
@@ -6,7 +7,7 @@ const Navbar = () => {
     <>
       <div className="navbar-container">
         <div className="navbar-logo-container">
-          <img className='navbar-logo' src="/Personal-logo.png" alt="" />
+          <img className='navbar-logo' src={navLogo} alt="" />
         </div>
         <ul className="list-container">
           <li className="item-list"> 
