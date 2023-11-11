@@ -1,3 +1,5 @@
+import cvPdf from "/CV-Patrik-Pecenka.pdf"
+
 const AboutSection = () => {
 
   return (
@@ -7,11 +9,9 @@ const AboutSection = () => {
           About Me          
         </h1>
         <div className="about-section-text">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris metus. Integer malesuada. 
-        Maecenas aliquet accumsan leo. Donec iaculis gravida nulla. Fusce consectetuer risus a nunc.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris metus. Integer malesuada. Maecenas aliquet accumsan leo. Donec iaculis gravida nulla. Fusce consectetuer risus a nunc.
+        I like to craft solid and scalable frontend products with great user experiences.
         </div>
-        <a href="/src/assets/CV-Patrik-Pecenka.pdf" rel="noreferrer" target="_blank">
+        <a href={cvPdf} rel="noreferrer" target="_blank">
           <button className="button download-cv">Download CV</button>
         </a>
       </div>
