@@ -1,7 +1,7 @@
 import Card from './Card'
 import { useImages } from 'hooks/useImages'
 import { v4 as uuidv4 } from 'uuid'
-import { IconCaretDown } from '@tabler/icons-react'
+//import { IconCaretDown } from '@tabler/icons-react'
 
 
 const PortfolioSection = () => {
@@ -18,12 +18,12 @@ const PortfolioSection = () => {
             <Card key={uuidv4()} id={image.id} image={image.download_url} title={image.author} />
           ))}
         </div>
-        <div className="view-more-container">
+    {/* <div className="view-more-container"> *****  WILL BE USED LATER ON   ******
           <div className="view-more-button">
             <p className='view-more-text'>View More</p>
             <IconCaretDown/>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

@@ -1,7 +1,6 @@
 import { FC, useEffect } from "react"
 import { IconBrandGithubFilled, IconWorldWww } from '@tabler/icons-react'
 
-
 interface CardProps {
   id: string,
   image: string,
