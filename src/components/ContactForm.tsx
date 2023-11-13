@@ -80,18 +80,23 @@ const ContactForm: FC = () => {
       <div className="background-form-wrapper">
         <div className='form-wrapper'>
           <form ref={formRef} onSubmit={sendEmail} className="form-container" >
-            <label className='name-label'>
-              <input placeholder="First Name" type="text" name="first_name" value={formData.first_name} onChange={onChange} />
-            </label>
-            <label className='last-name-label'>
-              <input placeholder='Last Name' type="text" name="last_name" value={formData.last_name} onChange={onChange} />
-            </label>
-            <label className='email-label'>
-              <input placeholder='Email' type="email" name="email" value={formData.email} onChange={onChange} />
-            </label>
-            <label className='phone-label'>
-              <input placeholder='Phone' type="tel" name="phone" value={formData.phone} onChange={onChange} />
-            </label>
+            <h4>Ready to transform your idea into reality? Hit me up and let's make it happen! </h4>
+            <div className="name-group">
+              <label className='name-label'>
+                <input placeholder="First Name" type="text" name="first_name" value={formData.first_name} onChange={onChange} />
+              </label>
+              <label className='last-name-label'>
+                <input placeholder='Last Name' type="text" name="last_name" value={formData.last_name} onChange={onChange} />
+              </label>
+            </div>
+            <div className="contact-group">
+              <label className='email-label'>
+                <input placeholder='Email' type="email" name="email" value={formData.email} onChange={onChange} />
+              </label>
+              <label className='phone-label'>
+                <input placeholder='Phone' type="tel" name="phone" value={formData.phone} onChange={onChange} />
+              </label>
+            </div>
             <label className='message-label'>
               <textarea placeholder='Message...' name="message" value={formData.message} onChange={onChange} />
             </label>

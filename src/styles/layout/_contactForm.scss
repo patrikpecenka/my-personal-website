@@ -37,49 +37,38 @@
   flex: 2;
 
     .form-wrapper {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100%;
       border-radius: 5px;
-      place-items: center;
 
     .form-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
+      display: flex;
+      flex-direction: column;
       max-height: 600px;
-      width: 250px;
+      width: 290px;
 
         .name-group {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 8px;
+          
+          > .name-label {
+            margin-right: 8px
+          }
 
-        .form-subgroup {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 10px;
         }
-      }
-      
-      .email-phone-group,
-      .message-group {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
 
-        .form-subgroup {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 10px;
+        .contact-group {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 8px;
+
+          > .email-label {
+            margin-right: 8px;
+          }
         }
-      }
-
-      .form-subgroup {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
       }
     }
 
@@ -100,6 +89,7 @@
     textarea {
       min-height: 80px;
       resize: vertical;
+      margin-bottom: 4px;
     }
 
     .form-submit-button {
@@ -108,18 +98,9 @@
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
-      width: 5vw;
+      width: 90px;
     }
   }
-}
-
-@media (min-width: 600px) {
-  .form-wrapper {
-    .form-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-}
 
 
 [data-highlight="highlight"] {
