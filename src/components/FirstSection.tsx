@@ -1,6 +1,5 @@
-import SphereComponent from './SphereComponent'
 import { Button } from 'react-scroll'
-import myImg from '/Screenshot_3-gigapixel-standard-scale-4_00x.png'
+import myImg from '/picture.png'
 import cvPdf from "/CV-Patrik-Pecenka.pdf"
 
 const FirstSection = () => {
@@ -34,7 +33,6 @@ const FirstSection = () => {
 
       {/*right side of first section with 3d rotating cube and AI generated image of myself*/}
       <div className="threejs-image-container">
-        <SphereComponent />
         <img className="pfp-image" src={myImg} alt="Vector" />
       </div>
     </div>
