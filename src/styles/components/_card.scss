@@ -70,14 +70,6 @@
   margin-right: 20px
 }
 
-.portfolio-grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3);
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
-}
-
 .card-buttons-container{
   display: flex;
   flex: 1;

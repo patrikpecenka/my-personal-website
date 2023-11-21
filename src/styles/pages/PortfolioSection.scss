@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;800&family=Poppins&family=Ysabeau+Infant&display=swap');
 
 .portfolio-section-wrapper {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +14,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  .portfolio-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
 }
 
 .portfolio-section-title {
@@ -62,6 +69,23 @@
     transform: translateY(-5px)
   }
 }
+
+@media (width <= 768px) {
+  .portfolio-layout-container {
+    .portfolio-grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (1px <= width <= 425px) {
+  .portfolio-layout-container {
+    .portfolio-grid-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
 
 
 

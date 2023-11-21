@@ -9,6 +9,8 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+
+
   
   return (
     <>
@@ -19,7 +21,7 @@ const Navbar = () => {
             {isOpen ? "X" : "☰"}
           </div>
         </div>
-        <ul className={`list-container ${isOpen ? "open" : ""}`}>
+        <ul className={`list-container ${isOpen ? "open" : "closed"}`}>
           <li className="item-list"> 
             <Link to="projects" spy={true} smooth={true} offset={0} duration={300}>Projects</Link> 
           </li>
