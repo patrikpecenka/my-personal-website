@@ -5,7 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .contact-section-wrapper {
@@ -13,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 800px;
+  flex-direction: row;
 }
 
 //left side
@@ -26,39 +27,39 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  flex: 2;
 
-  > .information-container {
-    width: 300px;
-    margin-left: 5vw;
-
+  .information-container {
+    width: 20vw;
+    text-align: center;
   }
 }
 
 //right side 
 .background-form-wrapper {
   display: flex;
-  height: 450px;
+  height: 50vh;
+  width: 500px;
   background-color: $color-grey-2;
   //border-top-right-radius: 15px;
   //border-bottom-right-radius: 15px;
   border-radius:27% 73% 79% 21% / 46% 30% 70% 54%;
-  flex: 2;
+  flex: 1;
     
     .inside-form-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100%;
-      width: 500px;
+      width: 50vw;
       border-radius: 5px;
       
 
     .form-container {
       display: flex;
       flex-direction: column;
-      max-height: 600px;
-      width: 290px;
+      max-height: 50vh;
+      width: 17vw;
 
         .name-group {
           display: flex;
@@ -130,4 +131,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media only screen and (max-width: 425px) {
+  .contact-section-wrapper {
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .background-form-wrapper {
+    width: 350px;
+    height: 350px;
+  }
+
+  .background-form-wrapper .inside-form-wrapper .form-container {
+    width: 100vw;
+}
+
+  .information-wrapper .information-container {
+    width: 100vw;
+    text-align: center;
+}
 }

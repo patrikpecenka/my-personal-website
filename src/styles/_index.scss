@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;800&family=Poppins&family=Ysabeau+Infant&display=swap');
 
 
+:root {
+  display: flex;
+  flex-direction: column;
+}
+
 
 html {
   font-size: 100%;
