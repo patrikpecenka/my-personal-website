@@ -1,5 +1,5 @@
 import { Link, Button } from 'react-scroll'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import navLogo from '/Personal-logo.png'
 
 const Navbar = () => {
@@ -10,6 +10,18 @@ const Navbar = () => {
     setIsOpen(!isOpen)
   }
 
+  //close navbar if screen size has changed
+  useEffect(() => {
+    const resizeCheck = () => {
+      setIsOpen(false)
+    }
+
+    window.addEventListener("resize", resizeCheck)
+
+    return () => {
+      window.removeEventListener("resize", resizeCheck)
+    }
+  }, [])
 
   
   return (

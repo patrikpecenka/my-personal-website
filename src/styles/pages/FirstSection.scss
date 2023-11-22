@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;800&family=Poppins&family=Ysabeau+Infant&display=swap');
 
 .first-section-wrapper{
-  z-index: 10;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -24,13 +23,14 @@
   }
 
   .main_text_1, .main_text_2 {
-    font-size: 3vw;
+    font-size: 2.8vw;
     font-weight: 700;
   }
 
 
   .subtext_1 {
-    margin-bottom: 5vw;
+    color: rgb(170, 170, 170);
+    margin-bottom: 4vw;
     font-size: 1.05vw;
     font-weight: 600;
   }
@@ -47,7 +47,7 @@
   text-overflow: ellipsis;
 
   .front, .end {
-    font-size: 12.5vw;
+    font-size: 12vw;
     font-weight: 700;
   }
 }
@@ -64,8 +64,8 @@
 }
 
 .pfp-image {
-  max-width: 32vw;
-  max-height: 32vw;
+  max-width: 25vw;
+  max-height: 25vw;
   border-radius:22% 78% 49% 51% / 31% 44% 56% 69%;
   animation: animate 2s infinite ease alternate;
 }

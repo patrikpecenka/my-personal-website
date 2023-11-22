@@ -1,5 +1,6 @@
 import { FC, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { IconPhoneFilled, IconMapPinFilled, IconMailFilled } from '@tabler/icons-react';
 
 interface ContactFormProps {
   first_name: string,
@@ -67,14 +68,18 @@ const ContactForm: FC = () => {
 
 
   return (
-    <div className="full-form-wrapper">
-      <div id="contact-me" className="contact-section-wrapper">
+    <div id="contact-me" className="full-form-wrapper">
+      <div className="contact-section-wrapper">
         <div className="information-wrapper">
           <div className="information-container">
             <h1 className="info-text">
               Let's create something <span data-highlight="highlight"> cool </span> together
             </h1>
-            <p></p>
+              <div className="icons-text-section">
+                <p><span data-highlight="icon"><IconMailFilled/></span> ppecenka@icloud.com</p>
+                <p> <span data-highlight="icon"><IconPhoneFilled/></span> +420 723 866 407</p>
+                <p> <span data-highlight="icon"><IconMapPinFilled/></span> Londynska 824/199, 40001 Usti nad Labem</p>
+              </div>
           </div>
         </div>
 
@@ -84,7 +89,7 @@ const ContactForm: FC = () => {
               <h4>Ready to transform your idea into reality? Hit me up and let's make it happen! </h4>
               <div className="name-group">
                 <label className='name-label'>
-                  <input placeholder="First Name" type="text" name="first_name" value={formData.first_name} onChange={onChange} />
+                  <input  placeholder="First Name" type="text" name="first_name" value={formData.first_name} onChange={onChange} />
                 </label>
                 <label className='last-name-label'>
                   <input placeholder='Last Name' type="text" name="last_name" value={formData.last_name} onChange={onChange} />
