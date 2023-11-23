@@ -1,6 +1,6 @@
 import { Button } from 'react-scroll'
 import myImg from '/picture.png'
-import cvPdf from "/CV-Patrik-Pecenka.pdf"
+import cvPdf from "/Resume-CZ-ENG.pdf"
 import { useTranslation } from "react-i18next"
 
 const FirstSection = () => {

@@ -1,4 +1,4 @@
-import cvPdf from "/CV-Patrik-Pecenka.pdf"
+import cvPdf from "/Resume-CZ-ENG.pdf"
 
 const AboutSection = () => {
 
