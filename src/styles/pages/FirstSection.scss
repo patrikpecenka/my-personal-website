@@ -60,12 +60,12 @@
   display: flex;
   flex: 3;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
+  padding: 0 5dvw;
 }
 
 .pfp-image {
-  max-width: 25vw;
-  max-height: 25vw;
+  max-width: 32vw;
   border-radius:22% 78% 49% 51% / 31% 44% 56% 69%;
   animation: animate 2s infinite ease alternate;
 }
