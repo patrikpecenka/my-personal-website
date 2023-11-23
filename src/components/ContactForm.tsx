@@ -1,6 +1,6 @@
 import { FC, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { IconPhoneFilled, IconMapPinFilled, IconBrandLinkedin } from '@tabler/icons-react';
+import { IconMapPinFilled, IconBrandLinkedin } from '@tabler/icons-react';
 
 interface ContactFormProps {
   first_name: string,
