@@ -1,6 +1,6 @@
 import { FC, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { IconPhoneFilled, IconMapPinFilled, IconMailFilled } from '@tabler/icons-react';
+import { IconPhoneFilled, IconMapPinFilled, IconBrandLinkedin } from '@tabler/icons-react';
 
 interface ContactFormProps {
   first_name: string,
@@ -76,9 +76,9 @@ const ContactForm: FC = () => {
               Let's create something <span data-highlight="highlight"> cool </span> together
             </h1>
               <div className="icons-text-section">
-                <p><span data-highlight="icon"><IconMailFilled/></span> ppecenka@icloud.com</p>
-                <p> <span data-highlight="icon"><IconPhoneFilled/></span> +420 723 866 407</p>
-                <p> <span data-highlight="icon"><IconMapPinFilled/></span> Londynska 824/199, 40001 Usti nad Labem</p>
+                <p><span data-highlight="icon"><IconBrandLinkedin/></span> linkedin.com</p>
+                {/*<p> <span data-highlight="icon"><IconPhoneFilled/></span> +420 723 866 407</p>*/}
+                <p> <span data-highlight="icon"><IconMapPinFilled/></span> Usti nad Labem, Czech Republic</p>
               </div>
           </div>
         </div>
