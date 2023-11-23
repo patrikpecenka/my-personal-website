@@ -1,28 +1,23 @@
 import { Link, Button } from 'react-scroll'
 import { useState, useEffect } from 'react'
 import navLogo from '/Personal-logo.png'
+import { useMediaQuery } from 'hooks/useMediaQuery'
 
 const Navbar = () => {
-
   const [isOpen, setIsOpen] = useState(false)
+  const isSmall = useMediaQuery('(width <= 768px)');
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
 
-  //close navbar if screen size has changed
   useEffect(() => {
-    const resizeCheck = () => {
-      setIsOpen(false)
-    }
-
-    window.addEventListener("resize", resizeCheck)
-
-    return () => {
-      window.removeEventListener("resize", resizeCheck)
-    }
-  }, [])
-
+          if (!isSmall) {
+              if (isOpen) {
+                  setIsOpen(false);
+              }
+          }
+      }, [isSmall]);
   
   return (
     <>
