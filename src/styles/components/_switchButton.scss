@@ -1,0 +1,80 @@
+$width: 120px;
+$padding: 7px;
+$height: $width / 2 + $padding;
+$flag_cz: url("/czech-flag.png");
+$flag_en: url("/us-flag.png");
+
+.wraper {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  margin-left: 2vw;
+
+}
+
+.label-text {
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+//toggle code begins!
+.switch-wrap {
+  cursor: pointer;
+  background: $color-grey-3;
+  padding: 6px;
+  width: 50px;
+  height: 25px;
+  border-radius: 33.5px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $color-3;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+.switch {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0fr 1fr 1fr;
+  transition: .2s;
+  //ICYMI, pseudo elements are treated as grid items
+  &::after {
+    content: '';
+    border-radius: 50%;
+    background: $flag_cz;
+    background-size: contain;
+    background-repeat: no-repeat;
+    grid-column: 2;
+    transition: background .2s ease-in-out;
+  }
+}
+input:checked {
+  + .switch {
+    grid-template-columns: 1fr 1fr 0fr;
+    &::after {
+      background: $flag_en;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+
+@media (width <= 768px) {
+  .wraper {
+    margin-left: 0;
+    margin-top: 2vw;
+  }
+}
+
+@media (1px <= width <= 425px) {
+  .wraper {
+    margin-top: 4vw;
+  }
+}

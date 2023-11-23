@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "text_1": "Projekty",
+    "text_2": "O Mně",
+    "button_text": "Kontaktuj Mě"
+  },
+  "first_section": {
+    "main_text_1": "Ahoj,",
+    "main_text_2": "Jmenuji se Patrik Pečenka",
+    "subtext_1": "Jsem webový vývojář s uměleckými & designovými kořeny. Jinými slovy chodil jsem na uměleckou školu a vrátil se jako programátor.",
+    "oops": "Ups.",
+    "button_p": "Moje Projekty",
+    "button_cv": "Stáhnout CV"
+  },
+  "contact_form": {
+    "info_text_1": "Pojďme vytvořin něco",
+    "info_text_2": "parádního",
+    "info_text_3": "společně",
+    "linkedin": "linkedin.com",
+    "adress": "Ústí nad Labem, Česká republika",
+    "h4_text": "Připraveni přeměnit Vaše nápady na realitu? Ozvěte se a pojďme nápad společně stvořit!",
+    "button": "Odeslat",
+    "ph_fname": "Jméno",
+    "ph_lname": "Příjmení",
+    "ph_email": "Email",
+    "ph_phone": "Telefon",
+    "ph_message": "Zpráva..."
+  }
+}

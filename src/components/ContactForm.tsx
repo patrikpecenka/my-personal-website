@@ -1,6 +1,7 @@
 import { FC, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { IconMapPinFilled, IconBrandLinkedin } from '@tabler/icons-react';
+import { useTranslation } from 'react-i18next';
 
 interface ContactFormProps {
   first_name: string,
@@ -18,6 +19,8 @@ const ContactForm: FC = () => {
     phone: '',
     message: ''
   })
+
+  const [t] = useTranslation("translation")
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -73,12 +76,13 @@ const ContactForm: FC = () => {
         <div className="information-wrapper">
           <div className="information-container">
             <h1 className="info-text">
-              Let's create something <span data-highlight="highlight"> cool </span> together
+              {t("contact_form.info_text_1")} 
+              <span data-highlight="highlight"> {t("contact_form.info_text_2")} </span> {t("contact_form.info_text_3")}
             </h1>
               <div className="icons-text-section">
-                <p><span data-highlight="icon"><IconBrandLinkedin/></span> linkedin.com</p>
+                <p><span data-highlight="icon"><IconBrandLinkedin/></span> {t("contact_form.linkedin")}</p>
                 {/*<p> <span data-highlight="icon"><IconPhoneFilled/></span> +420 723 866 407</p>*/}
-                <p> <span data-highlight="icon"><IconMapPinFilled/></span> Usti nad Labem, Czech Republic</p>
+                <p> <span data-highlight="icon"><IconMapPinFilled/></span>{t("contact_form.adress")}</p>
               </div>
           </div>
         </div>
@@ -86,27 +90,27 @@ const ContactForm: FC = () => {
         <div className="background-form-wrapper">
           <div className='inside-form-wrapper'>
             <form ref={formRef} onSubmit={sendEmail} className="form-container" >
-              <h4>Ready to transform your idea into reality? Hit me up and let's make it happen! </h4>
+              <h4>{t("contact_form.h4_text")}</h4>
               <div className="name-group">
                 <label className='name-label'>
-                  <input  placeholder="First Name" type="text" name="first_name" value={formData.first_name} onChange={onChange} />
+                  <input  placeholder={t("contact_form.ph_fname")} type="text" name="first_name" value={formData.first_name} onChange={onChange} />
                 </label>
                 <label className='last-name-label'>
-                  <input placeholder='Last Name' type="text" name="last_name" value={formData.last_name} onChange={onChange} />
+                  <input placeholder={t("contact_form.ph_lname")} type="text" name="last_name" value={formData.last_name} onChange={onChange} />
                 </label>
               </div>
               <div className="contact-group">
                 <label className='email-label'>
-                  <input placeholder='Email' type="email" name="email" value={formData.email} onChange={onChange} />
+                  <input placeholder={t("contact_form.ph_email")} type="email" name="email" value={formData.email} onChange={onChange} />
                 </label>
                 <label className='phone-label'>
-                  <input placeholder='Phone' type="tel" name="phone" value={formData.phone} onChange={onChange} />
+                  <input placeholder={t("contact_form.ph_phone")} type="tel" name="phone" value={formData.phone} onChange={onChange} />
                 </label>
               </div>
               <label className='message-label'>
-                <textarea placeholder='Message...' name="message" value={formData.message} onChange={onChange} />
+                <textarea placeholder={t("contact_form.ph_message")} name="message" value={formData.message} onChange={onChange} />
               </label>
-              <button className='form-submit-button' type="submit" value="Send">Submit</button>
+              <button className='form-submit-button' type="submit" value="Send">{t("contact_form.button")}</button>
             </form>
           </div>
         </div>

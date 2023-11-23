@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "text_1": "Projects",
+    "text_2": "About Me",
+    "button_text": "Contact Me"
+  },
+  "first_section": {
+    "main_text_1": "Hi,",
+    "main_text_2": "I am Patrick Pecenka",
+    "subtext_1": "I'm web developer with an art & design background. In other words, I went to art school and returned as a programmer.",
+    "oops": "Oops.",
+    "button_p": "My Projects",
+    "button_cv": "Download CV"
+  },
+  "contact_form": {
+    "info_text_1": "Let's create something",
+    "info_text_2": "cool",
+    "info_text_3": "together",
+    "linkedin": "linkedin.com",
+    "adress": "Usti nad Labem, Czech Republic",
+    "h4_text": "Ready to transform your idea into reality? Hit me up and let's make it happen!",
+    "button": "Submit",
+    "ph_fname": "First Name",
+    "ph_lname": "Last Name",
+    "ph_email": "Email",
+    "ph_phone": "Phone",
+    "ph_message": "Message..."
+  }
+}

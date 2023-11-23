@@ -7,14 +7,13 @@ import ContactForm from "components/ContactForm";
 const AppShell = () => {
   return (
     <>
-      <Navbar/>
-      <FirstSection/>
-      <AboutSection/>
-      <PortfolioSection/>
-      <ContactForm/>
+      <Navbar />
+      <FirstSection />
+      <AboutSection />
+      <PortfolioSection />
+      <ContactForm />
     </>
   )
-
 }
 
 export default AppShell

@@ -7,19 +7,21 @@
 }
 
 .navbar-container {
-  z-index: 100;
   margin-top: 2dvh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0 5dvw;
+
 }
 
 .list-container {
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
+
 
 }   
 

@@ -1,8 +1,12 @@
 import { Button } from 'react-scroll'
 import myImg from '/picture.png'
 import cvPdf from "/CV-Patrik-Pecenka.pdf"
+import { useTranslation } from "react-i18next"
 
 const FirstSection = () => {
+
+  const [t] = useTranslation("translation")
+
   return (
 
       <div className="first-section-wrapper">
@@ -12,27 +16,26 @@ const FirstSection = () => {
             <div className="front">FRONT</div>
             <div className="end">END</div>
           </div>
-          <div className='main_text_1' >Hi,</div>
-          <div className='main_text_2' >I am Patrick Pecenka</div>
+          <div className='main_text_1' >{t("first_section.main_text_1")}</div>
+          <div className='main_text_2' >{t("first_section.main_text_2")}</div>
           <div className='subtext_1'>
-            I'm web developer with an art & design background.
-            In other words, I went to art school and returned as a programmer.
+          {t("first_section.subtext_1")}
             <br />
             <br />
-            Oops.
+            {t("first_section.oops")}
           </div>
 
           <div className="button-container">
             <Button
               className="button portfolio button-first-section"
-              type='submit' value="My Projects"
+              type='submit' value={t("first_section.button_p")}
               to="projects"
               spy={true}
               smooth={true}
               duration={500}
             />
             <a href={cvPdf} rel="noreferrer" target="_blank">
-              <button className="button download-cv button-first-section">Download CV</button>
+              <button className="button download-cv button-first-section">{t("first_section.button_cv")}</button>
             </a>
           </div>
         </div>
