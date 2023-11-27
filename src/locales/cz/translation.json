@@ -28,8 +28,13 @@
   },
 
   "errors": {
-    "form": "Prosím vyplňte celý formulář",
     "email": "Prosím zadejte správný formát emailu",
-    "phone": "Prosím zadejte správný formát telefoního čísla s předvolbou např. +420"
+    "email_required": "Email musí být vyplněný",
+    "phone": "Prosím zadejte správný formát telefoního čísla s předvolbou např. +420",
+    "phone_required": "Telefoní číslo musí být vyplněno"
+  },
+
+  "success": {
+    "form_success": "Zpráva byla v pořádku odeslána"
   }
 }

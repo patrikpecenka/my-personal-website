@@ -89,7 +89,9 @@
       margin-top: 0;
 
       .text-wrapper {
-        padding: 0 5dvw;
+        padding-left: 5dvw;
+        padding-top: 8dvw;
+        padding-right: 5dvw;
       }
     }
 
@@ -113,7 +115,7 @@
       margin-bottom: 3vh;
     
       .main_text_1, .main_text_2 {
-        font-size: 4rem;
+        font-size: 3.8rem;
       }
     }
 
@@ -133,6 +135,29 @@
 @media (1px <= width <= 425px) {
   .first-section-wrapper {
     flex-direction: column;
+
+    .text-wrapper {
+      padding-left: 5dvw;
+      padding-right: 5dvw;
+
+      
+    .text-container {
+      .main_text_1, .main_text_2 {
+        font-size: 3.2rem;
+      }
+    }
+
+    .background-grey-text {
+      .front, .end {
+        font-size: 10rem;
+        font-weight: 700;
+      }
+    }
+
+    .subtext_1 {
+      font-size: 1.1rem;
+    }
+    }
   }
 
   .first-section-second-wrapper {

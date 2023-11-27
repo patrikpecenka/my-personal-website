@@ -102,24 +102,45 @@
       flex-direction: column;
       max-width: 18rem;
 
-        .name-group {
-          display: flex;
-          flex-direction: row;
-          margin-bottom: 8px;
+      .success-paragraph {
+        text-align: center;
+        color: $color-white;
+        margin: 0.6rem 0 0 0;
+        font-weight: 500;
+        font-size: 1rem;
+        background-color: $success-color;
+        padding: 0.5rem;
+        border-radius: 5px;
+        box-sizing: border-box;
+        box-shadow: 3px 3px 14px -5px rgba(0,0,0,0.47);
+        -webkit-box-shadow: 3px 3px 14px -5px rgba(0,0,0,0.47);
+        -moz-box-shadow: 3px 3px 14px -5px rgba(0,0,0,0.47);
+      }
+
+      .name-group {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0.6rem;
           
-          > .name-label {
-            margin-right: 8px
-          }
+        >.name-label {
+          margin-right: 8px
+        }
 
         }
 
         .contact-group {
           display: flex;
           flex-direction: column;
-          margin-bottom: 8px;
+          margin-bottom: 0.3rem;
 
           > .email-label {
-            margin-bottom: 8px;
+            margin-bottom: 0.3rem;
+          }
+
+          .error-paragraph {
+            color: $error-color;
+            margin: 0 0 0.3rem 0;
+            font-size: 0.9rem;
           }
         }
       }

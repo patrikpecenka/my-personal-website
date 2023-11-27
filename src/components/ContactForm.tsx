@@ -1,8 +1,9 @@
-import { FC, useState, useRef } from 'react';
+import { FC, useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { IconMapPinFilled, IconBrandLinkedin } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 import useShowComponent from 'hooks/useShowComponent';
+import { ValidationResult, validateEmail, validatePhone } from 'utils/formValidation';
 
 interface ContactFormProps {
   first_name: string,
@@ -13,10 +14,9 @@ interface ContactFormProps {
 }
 
 const ContactForm: FC = () => {
-  const [errorMessage, setErrorMessage] = useState("")
+  const [successMessage, setSuccessMessage] = useState("")
   const [emailError, setEmailError] = useState("")
   const [phoneError, setPhoneError] = useState("")
-
   const [formData, setFormData] = useState<ContactFormProps>({
     first_name: '',
     last_name: '',
@@ -24,11 +24,9 @@ const ContactForm: FC = () => {
     phone: '',
     message: ''
   })
-
+  
   useShowComponent({ selector: '.full-form-wrapper' })
-
   const [t] = useTranslation("translation")
-
   const formRef = useRef<HTMLFormElement>(null);
 
   const onChange = (e: any) => {
@@ -38,23 +36,10 @@ const ContactForm: FC = () => {
     }))
   }
 
-  const validateEmail = (email: string) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isValid = re.test(String(email).toLowerCase());
-    return { isValid, error: isValid ? '' : t("errors.email") };
-  }
-
-  const validatePhone = (phone: string) => {
-    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-    const mo = phone.replace(/[^+\d+]/g,"")
-    const isValid = re.test(mo)
-    return { isValid, error: isValid ? "" : t("errors.phone") };
-  }
-
   const sendEmail = async (e: any) => {
     e.preventDefault();
-    const emailValidation = validateEmail(formData.email);
-    const phoneValidation = validatePhone(formData.phone)
+    const emailValidation: ValidationResult = validateEmail(formData.email, t);
+    const phoneValidation: ValidationResult = validatePhone(formData.phone, t)
 
     if (
       !formData.first_name ||
@@ -65,13 +50,10 @@ const ContactForm: FC = () => {
       !emailValidation.isValid ||
       !phoneValidation.isValid
     ) {
-      setErrorMessage("Please fullfill the form")
-      setEmailError(emailValidation.error)
-      setPhoneError(phoneValidation.error)
+      setEmailError(emailValidation.error || "")
+      setPhoneError(phoneValidation.error || "")
       return;
     }
-
-    setErrorMessage("")
     setEmailError("")
     setPhoneError("")
 
@@ -82,7 +64,7 @@ const ContactForm: FC = () => {
         formRef.current!,
         'VMLj4xeAHls4ctRDH',
       );
-
+    
       setFormData({
         first_name: '',
         last_name: '',
@@ -91,12 +73,22 @@ const ContactForm: FC = () => {
         message: ''
       });
 
+      setSuccessMessage(t("success.form_success"))
+
       console.log(result.text)
 
-    } catch (error) {
-      console.log((error as any).text)
+    } catch (err) {
+      console.error(err)
     }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSuccessMessage("");
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [successMessage]);
 
   return (
     <div id="contact-me" className="full-form-wrapper">
@@ -121,29 +113,57 @@ const ContactForm: FC = () => {
               <h4>{t("contact_form.h4_text")}</h4>
               <div className="name-group">
                 <label className='name-label'>
-                  <input  placeholder={t("contact_form.ph_fname")} type="text" name="first_name" value={formData.first_name} onChange={onChange} />
+                  <input  
+                    placeholder={t("contact_form.ph_fname")} 
+                    type="text" 
+                    name="first_name" 
+                    value={formData.first_name} 
+                    onChange={onChange}
+                  />
                 </label>
                 <label className='last-name-label'>
-                  <input placeholder={t("contact_form.ph_lname")} type="text" name="last_name" value={formData.last_name} onChange={onChange} />
+                  <input 
+                    placeholder={t("contact_form.ph_lname")} 
+                    type="text" 
+                    name="last_name" 
+                    value={formData.last_name} 
+                    onChange={onChange} 
+                  />
                 </label>
               </div>
               <div className="contact-group">
                 <label className='email-label'>
-                  <input placeholder={t("contact_form.ph_email")} type="email" name="email" value={formData.email} onChange={onChange} />
-                  {emailError}
+                  <input 
+                    placeholder={t("contact_form.ph_email")} 
+                    name="email" 
+                    value={formData.email} 
+                    onChange={onChange} 
+                  />
+                  <p className='error-paragraph'>{emailError}</p>
                 </label>
                 <label className='phone-label'>
-                  <input placeholder={t("contact_form.ph_phone")} type="tel" name="phone" value={formData.phone} onChange={onChange} />
-                  {phoneError}
+                  <input 
+                    placeholder={t("contact_form.ph_phone")} 
+                    type="tel" 
+                    name="phone" 
+                    value={formData.phone} 
+                    onChange={onChange} 
+                  />
+                  <p className='error-paragraph'>{phoneError}</p>
                 </label>
               </div>
               <label className='message-label'>
-                <textarea placeholder={t("contact_form.ph_message")} name="message" value={formData.message} onChange={onChange} />
+                <textarea 
+                  placeholder={t("contact_form.ph_message")} 
+                  name="message" 
+                  value={formData.message} 
+                  onChange={onChange} 
+                />
               </label>
               <label className="error-label">
-                {errorMessage}
               </label>
               <button className='form-submit-button' type="submit" value="Send">{t("contact_form.button")}</button>
+              {successMessage && <p className='success-paragraph'>{successMessage}</p>}
             </form>
           </div>
         </div>
