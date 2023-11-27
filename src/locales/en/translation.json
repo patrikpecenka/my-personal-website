@@ -25,5 +25,11 @@
     "ph_email": "Email",
     "ph_phone": "Phone",
     "ph_message": "Message..."
+  },
+
+  "errors": {
+    "form": "Please fullfill the form",
+    "email": "Please enter a valid email address",
+    "phone": "Please enter a valid phone number with country code for example +420"
   }
 }

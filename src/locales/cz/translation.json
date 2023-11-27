@@ -18,12 +18,18 @@
     "info_text_3": "společně",
     "linkedin": "linkedin.com",
     "adress": "Ústí nad Labem, Česká republika",
-    "h4_text": "Připraveni přeměnit Vaše nápady na realitu? Ozvěte se a pojďme nápad společně stvořit!",
+    "h4_text": "Připraveni přeměnit Vaše nápady na realitu? Zanechte zprávu a pojďme nápad společně stvořit!",
     "button": "Odeslat",
     "ph_fname": "Jméno",
     "ph_lname": "Příjmení",
     "ph_email": "Email",
     "ph_phone": "Telefon",
     "ph_message": "Zpráva..."
+  },
+
+  "errors": {
+    "form": "Prosím vyplňte celý formulář",
+    "email": "Prosím zadejte správný formát emailu",
+    "phone": "Prosím zadejte správný formát telefoního čísla s předvolbou např. +420"
   }
 }

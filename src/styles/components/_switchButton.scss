@@ -1,6 +1,6 @@
 $width: 120px;
 $padding: 7px;
-$height: $width / 2 + $padding;
+$height: 67px;
 $flag_cz: url("/czech-flag.png");
 $flag_en: url("/us-flag.png");
 
@@ -69,12 +69,12 @@ input:checked {
 @media (width <= 768px) {
   .wraper {
     margin-left: 0;
-    margin-top: 2vw;
+    margin-top: 1rem;
   }
 }
 
 @media (1px <= width <= 425px) {
   .wraper {
-    margin-top: 4vw;
+    margin-top: 1rem;
   }
 }

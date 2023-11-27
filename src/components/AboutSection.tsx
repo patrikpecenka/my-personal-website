@@ -1,6 +1,9 @@
 import cvPdf from "/Resume-CZ-ENG.pdf"
+import useShowComponent from "hooks/useShowComponent"
 
 const AboutSection = () => {
+
+  useShowComponent({ selector: ".about-section-wrapper"})
 
   return (
     <div id="about" className="about-section-wrapper hidden-about">  

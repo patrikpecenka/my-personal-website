@@ -8,14 +8,25 @@ import SwitchButton from './SwitchButton'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const isSmall = useMediaQuery('(width <= 768px)');
-  const [isSwitchOn, setIsSwitchOn] = useState(true)
+  const storedValue = localStorage.getItem("isSwitchOn");
+  const [isSwitchOn, setIsSwitchOn] = useState(storedValue ? JSON.parse(storedValue) : false)
 
   const [t, i18n] = useTranslation("translation")
-
+  
   const handleChangeLanguage = (newState: boolean) => {
-    setIsSwitchOn(newState);
-    isSwitchOn ? i18n.changeLanguage("cz") : i18n.changeLanguage("en")    
+    setIsSwitchOn(newState)
+    localStorage.setItem("isSwitchOn", JSON.stringify(newState))
   }
+
+  useEffect(() => {
+    if (!isSwitchOn) {
+      i18n.changeLanguage("cz");
+      localStorage.setItem("language", "cz");
+    } else {
+      i18n.changeLanguage("en");
+      localStorage.setItem("language", "eng");
+    }
+  }, [isSwitchOn, i18n]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)

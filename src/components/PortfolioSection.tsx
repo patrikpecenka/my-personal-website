@@ -2,10 +2,11 @@ import Card from './Card'
 import { useImages } from 'hooks/useImages'
 import { v4 as uuidv4 } from 'uuid'
 //import { IconCaretDown } from '@tabler/icons-react'
-
+import useShowComponent from 'hooks/useShowComponent'
 
 const PortfolioSection = () => {
   const { images } = useImages()
+  useShowComponent({ selector: ".portfolio-section-title" })
 
   return (
     <div id="projects" className="portfolio-section-wrapper">

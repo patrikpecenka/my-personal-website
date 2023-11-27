@@ -5,14 +5,18 @@ interface SwitchButtonProps {
 }
 
 const SwitchButton: FC<SwitchButtonProps> = ({onToggle}) => {
-  const [isChecked, setIsChecked] = useState(true)
+  const storedValue = localStorage.getItem("isChecked");
+  const [isChecked, setIsChecked] = useState(storedValue ? JSON.parse(storedValue) : false);
+
 
   const handleToggle = () => {
     const newState = !isChecked
     setIsChecked(newState)
+    localStorage.setItem("isChecked", JSON.stringify(newState))
 
     onToggle(newState)
   }
+
   return (
     <>
       <label className="wraper">

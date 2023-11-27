@@ -1,12 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;800&family=Ysabeau+Infant&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700;800&family=Poppins&family=Ysabeau+Infant&display=swap');
 
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(50%);
+  transition: 1s;
+}
+
+.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
 .full-form-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 5vh 0;
   padding: 0;
+  transition: 1s ease-in-out;
 }
 
 .contact-section-wrapper {
@@ -17,6 +31,8 @@
   flex-direction: row;
   margin: 20px 4vw;
   width: 670px;
+
+  transition: 0.2s ease-in-out;
 }
 
 //left side
@@ -191,6 +207,10 @@
 @media (width <= 768px) {
   .contact-section-wrapper {
     flex-direction: column;
+
+    &.background-form-wrapper {
+      transition-delay: 100ms;
+    }
   }
 
   .information-wrapper {

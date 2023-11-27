@@ -9,7 +9,7 @@ i18n
   .use(Backend)
   .use(initReactI18next)
   .init({
-    lng: "en",
+    lng: localStorage.getItem("language") || "en",
     fallbackLng: "en",
     resources: {
       en: {

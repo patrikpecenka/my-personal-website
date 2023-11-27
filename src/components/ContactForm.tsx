@@ -2,6 +2,7 @@ import { FC, useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { IconMapPinFilled, IconBrandLinkedin } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
+import useShowComponent from 'hooks/useShowComponent';
 
 interface ContactFormProps {
   first_name: string,
@@ -12,6 +13,10 @@ interface ContactFormProps {
 }
 
 const ContactForm: FC = () => {
+  const [errorMessage, setErrorMessage] = useState("")
+  const [emailError, setEmailError] = useState("")
+  const [phoneError, setPhoneError] = useState("")
+
   const [formData, setFormData] = useState<ContactFormProps>({
     first_name: '',
     last_name: '',
@@ -19,6 +24,8 @@ const ContactForm: FC = () => {
     phone: '',
     message: ''
   })
+
+  useShowComponent({ selector: '.full-form-wrapper' })
 
   const [t] = useTranslation("translation")
 
@@ -31,44 +38,65 @@ const ContactForm: FC = () => {
     }))
   }
 
-  const sendEmail = (e: any) => {
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = re.test(String(email).toLowerCase());
+    return { isValid, error: isValid ? '' : t("errors.email") };
+  }
+
+  const validatePhone = (phone: string) => {
+    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    const mo = phone.replace(/[^+\d+]/g,"")
+    const isValid = re.test(mo)
+    return { isValid, error: isValid ? "" : t("errors.phone") };
+  }
+
+  const sendEmail = async (e: any) => {
     e.preventDefault();
+    const emailValidation = validateEmail(formData.email);
+    const phoneValidation = validatePhone(formData.phone)
 
     if (
       !formData.first_name ||
       !formData.last_name ||
       !formData.email ||
       !formData.phone ||
-      !formData.message
+      !formData.message ||
+      !emailValidation.isValid ||
+      !phoneValidation.isValid
     ) {
-      console.log("Please fullfill the form")
+      setErrorMessage("Please fullfill the form")
+      setEmailError(emailValidation.error)
+      setPhoneError(phoneValidation.error)
+      return;
     }
 
-    emailjs
-      .sendForm(
+    setErrorMessage("")
+    setEmailError("")
+    setPhoneError("")
+
+    try {
+      const result = await emailjs.sendForm(
         'service_ygowsmq',
         'template_8h47km9',
         formRef.current!,
         'VMLj4xeAHls4ctRDH',
+      );
 
-      )
-
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        message: ''
       });
 
-    setFormData({
-      first_name: '',
-      last_name: '',
-      email: '',
-      phone: '',
-      message: ''
-    })
+      console.log(result.text)
+
+    } catch (error) {
+      console.log((error as any).text)
+    }
   };
-
-
 
   return (
     <div id="contact-me" className="full-form-wrapper">
@@ -102,13 +130,18 @@ const ContactForm: FC = () => {
               <div className="contact-group">
                 <label className='email-label'>
                   <input placeholder={t("contact_form.ph_email")} type="email" name="email" value={formData.email} onChange={onChange} />
+                  {emailError}
                 </label>
                 <label className='phone-label'>
                   <input placeholder={t("contact_form.ph_phone")} type="tel" name="phone" value={formData.phone} onChange={onChange} />
+                  {phoneError}
                 </label>
               </div>
               <label className='message-label'>
                 <textarea placeholder={t("contact_form.ph_message")} name="message" value={formData.message} onChange={onChange} />
+              </label>
+              <label className="error-label">
+                {errorMessage}
               </label>
               <button className='form-submit-button' type="submit" value="Send">{t("contact_form.button")}</button>
             </form>
