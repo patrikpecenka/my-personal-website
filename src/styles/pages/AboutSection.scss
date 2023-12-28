@@ -3,8 +3,9 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  height: 100vh;
-
+  height: 40vh;
+  margin-bottom: 10rem;
+  margin-top: -8rem;
 }
 
 .about-section-container {
@@ -25,6 +26,12 @@ h1 {
   flex: 2;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+@media (width <= 768px) {
+  .about-section-wrapper {
+    margin: 5rem 0;
+  }
 }
 
 @media (1px <= width <= 425px) {

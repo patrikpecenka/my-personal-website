@@ -1,0 +1,52 @@
+.skill-tooltip {
+  position: relative;
+  width: max-content;
+  background-color: $color-purple-light;
+  border-radius: 5px;
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.skill-tooltip::before {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent $color-purple-light transparent;
+}
+
+.skill-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .skill-image-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .skill-image{
+      width: 5rem;
+      aspect-ratio: 2/2;
+      object-fit: contain;
+      margin: 0.5rem;
+      transition: all 0.3s ease-in-out;
+  
+      &:hover {
+        filter: invert(30%);
+
+        +.skill-tooltip {
+          opacity: 1;
+          visibility: visible;
+          
+        }
+      }
+    }
+  }
+}

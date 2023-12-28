@@ -2,15 +2,18 @@ import { useEffect } from "react";
 
 interface showComponentsProps {
   selector: string;
+  offset?: string;
 }
 
-const useShowComponent = ({ selector }: showComponentsProps): void => {
+const useShowComponent = ({ selector, offset = "0px" }: showComponentsProps): void => {
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
+    }, {
+      rootMargin: offset
     });
   
     const cardElements = document.querySelectorAll(selector);
@@ -22,7 +25,7 @@ const useShowComponent = ({ selector }: showComponentsProps): void => {
     return () => {
       cardElements.forEach((element) => observer.unobserve(element));
     };
-  }, [selector]);
+  }, [selector, offset]);
 
 }
 

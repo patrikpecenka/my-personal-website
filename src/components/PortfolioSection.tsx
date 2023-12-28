@@ -6,7 +6,7 @@ import useShowComponent from 'hooks/useShowComponent'
 
 const PortfolioSection = () => {
   const { images } = useImages()
-  useShowComponent({ selector: ".portfolio-section-title" })
+  useShowComponent({ selector: ".portfolio-section-title", offset: "-200px"})
 
   return (
     <div id="projects" className="portfolio-section-wrapper">

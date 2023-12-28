@@ -66,6 +66,17 @@
       align-items: start;
       width: 100%;
       flex: 1;
+      
+
+      a {
+        text-decoration: none;
+        color: $color-white;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: $color-purple-light;
+        }
+      }
 
       p {
         display: flex;

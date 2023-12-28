@@ -2,6 +2,7 @@ import { Button } from 'react-scroll'
 import myImg from '/picture.png'
 import cvPdf from "/Resume-CZ-ENG.pdf"
 import { useTranslation } from "react-i18next"
+import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react'
 
 const FirstSection = () => {
 
@@ -37,6 +38,14 @@ const FirstSection = () => {
               />
               <a href={cvPdf} rel="noreferrer" target="_blank">
                 <button className="button download-cv button-first-section">{t("first_section.button_cv")}</button>
+              </a>
+            </div>
+            <div className="socials-container">
+              <a href="https://www.linkedin.com/in/ppecenka/" rel="noreferrer" target='_blank'>
+                <IconBrandLinkedin/>
+              </a>
+              <a href="https://github.com/patrikpecenka" rel="noreferrer" target='_blank'>
+                <IconBrandGithub/>
               </a>
             </div>
           </div>

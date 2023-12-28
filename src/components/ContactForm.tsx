@@ -100,9 +100,21 @@ const ContactForm: FC = () => {
               <span data-highlight="highlight"> {t("contact_form.info_text_2")} </span> {t("contact_form.info_text_3")}
             </h1>
               <div className="icons-text-section">
-                <p><span data-highlight="icon"><IconBrandLinkedin/></span> {t("contact_form.linkedin")}</p>
+                <a href="https://www.linkedin.com/in/ppecenka/" rel="noreferrer" target='_blank'>
+                  <p>
+                    <span data-highlight="icon">
+                      <IconBrandLinkedin/>
+                    </span> 
+                      {t("contact_form.linkedin")}
+                  </p>
+                </a>
                 {/*<p> <span data-highlight="icon"><IconPhoneFilled/></span> +420 723 866 407</p>*/}
-                <p> <span data-highlight="icon"><IconMapPinFilled/></span>{t("contact_form.adress")}</p>
+                <p>
+                  <span data-highlight="icon">
+                    <IconMapPinFilled/>
+                  </span>
+                    {t("contact_form.adress")}
+                </p>
               </div>
           </div>
         </div>
