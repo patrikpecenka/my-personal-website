@@ -1,6 +1,6 @@
 import cvPdf from "/Resume-CZ-ENG.pdf"
 import useShowComponent from "hooks/useShowComponent"
-import { IconBrandGithub, } from '@tabler/icons-react'
+//import { IconBrandGithub, } from '@tabler/icons-react'
 import SkillSet from "./SkillSet"
 
 const AboutSection = () => {
