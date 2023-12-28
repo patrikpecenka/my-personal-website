@@ -3,61 +3,61 @@
     "id": 1,
     "alt": "react",
     "tooltip": "React",
-    "svg": "src/assets/react.svg"
+    "svg": "/src/assets/react.svg"
   },
   {
     "id": 2,
     "alt": "javascript",
     "tooltip": "JavaScript",
-    "svg": "src/assets/javascript.svg"
+    "svg": "/src/assets/javascript.svg"
   },
   {
     "id": 3,
     "alt": "typescript",
     "tooltip": "TypeScript",
-    "svg": "src/assets/typescript.svg"
+    "svg": "/src/assets/typescript.svg"
   },
   {
     "id": 4,
     "alt": "html",
     "tooltip": "HTML",
-    "svg": "src/assets/html.svg"
+    "svg": "/src/assets/html.svg"
   },
   {
     "id": 5,
     "alt": "css",
     "tooltip": "CSS",
-    "svg": "src/assets/css.svg"
+    "svg": "/src/assets/css.svg"
   },
   {
     "id": 6,
     "alt": "c-sharp-logo",
     "tooltip": "C#",
-    "svg": "src/assets/c-sharp-logo.svg"
+    "svg": "/src/assets/c-sharp-logo.svg"
   },
   {
     "id": 7,
     "alt": "nodejs",
     "tooltip": "NodeJS",
-    "svg": "src/assets/nodejs.svg"
+    "svg": "/src/assets/nodejs.svg"
   },
   {
     "id": 8,
     "alt": "python",
     "tooltip": "Python",
-    "svg": "src/assets/python.svg"
+    "svg": "/src/assets/python.svg"
   },
   {
     "id": 9,
     "alt": "github",
     "tooltip": "GitHub",
-    "svg": "src/assets/github.svg"
+    "svg": "/src/assets/github.svg"
   },
   {
     "id": 10,
     "alt": "blender",
     "tooltip": "Blender",
-    "svg": "src/assets/blender.svg"
+    "svg": "/src/assets/blender.svg"
   }
 
 ]

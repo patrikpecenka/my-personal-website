@@ -1,10 +1,20 @@
 import data from "../constants/skills.json"
+import { FC } from "react";
 
-const SkillSet = () => {
+interface SkillItem {
+  id: number;
+  alt: string;
+  tooltip: string;
+  svg: string;
+}
+
+const SkillSet: FC = () => {
+  const skillsData: SkillItem[] = data;
+
   return (
     <>
       <div className="skill-container">
-        {data.map((item) => 
+        {skillsData.map((item: SkillItem) => 
         <div key={item.id} className="skill-image-container">
           <img
             src={item.svg}
