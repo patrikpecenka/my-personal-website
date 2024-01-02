@@ -27,8 +27,14 @@
     "ph_message": "Message..."
   },
 
-  "errors": {
+  "about_section" : {
+    "title": "My Skills",
+    "main_text": "",
+    "button_cv": "Download CV"
+  },
 
+
+  "errors": {
     "email": "This is not a valid email address",
     "email_required": "Email is required",
     "phone": "Please enter a valid phone number with country code for example +420",

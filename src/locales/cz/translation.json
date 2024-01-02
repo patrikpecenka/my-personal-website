@@ -27,6 +27,12 @@
     "ph_message": "Zpráva..."
   },
 
+  "about_section" : {
+    "title": "Mé Dovednosti",
+    "main_text": "",
+    "button_cv": "Stáhnout CV"
+  },
+
   "errors": {
     "email": "Prosím zadejte správný formát emailu",
     "email_required": "Email musí být vyplněný",
