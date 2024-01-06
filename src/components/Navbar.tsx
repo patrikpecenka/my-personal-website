@@ -51,10 +51,10 @@ const Navbar = () => {
         </div>
         <ul className={`list-container ${isOpen ? "open" : "closed"}`}>
           <li className="item-list"> 
-            <Link to="projects" spy={true} smooth={true} offset={0} duration={300}>{t("navbar.text_1")}</Link> 
+            <Link to="projects" spy={true} smooth={true} offset={0} duration={800}>{t("navbar.text_1")}</Link> 
           </li>
           <li className="item-list"> 
-            <Link to="about" spy={true} smooth={true} offset={-300} duration={300}>{t("navbar.text_2")}</Link> 
+            <Link to="about" spy={true} smooth={true} offset={-300} duration={800}>{t("navbar.text_2")}</Link> 
           </li>
           <Button className="button" type='submit' value={t("navbar.button_text")} to="contact-me" spy={true} smooth={true} duration={500} />
           <SwitchButton onToggle={handleChangeLanguage}/>

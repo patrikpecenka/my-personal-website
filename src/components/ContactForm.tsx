@@ -55,14 +55,13 @@ const ContactForm: FC = () => {
         opacity: 1,
         x: 0,
         delay: 0,
-        ease: "power4.inOut",
+        ease: "power4.out",
         scrollTrigger: {
           trigger: ".form",
-          start: "top bottom-=100",
+          start: "top bottom-=50",
           end: "top center",
           id: "contact",
-          scrub: 1,
-          
+          scrub: 2
         }
       })
       // ScrollTrigger.create({

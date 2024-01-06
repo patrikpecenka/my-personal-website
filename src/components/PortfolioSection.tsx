@@ -34,19 +34,20 @@ const PortfolioSection = () => {
     mm.add("(min-width: 768px)", () => {
       gsap.from(".card",
       {
-        scale: 0.3,
+        scale: 0.5,
         opacity: 0,
         y: 200,
         stagger: {
-          amount: 1,
-          from: "start"
+          amount: 2,
+          from: "start",
+          ease: "power2.out"
         },
-        duration: 2.5,
+        duration: 5,
         ease: "power4.inOut",
         scrollTrigger: {
           trigger: ".card",
-          start: "top bottom-=200",
-          end: "top+=300 bottom-=200",
+          start: "top-=400 bottom-=200",
+          end: "top+=400 bottom-=100",
           id: "card",
           markers: false,
           scrub: 1,
@@ -73,7 +74,7 @@ const PortfolioSection = () => {
           end: "top+=500 bottom-=200",
           id: "card",
           markers: false,
-          scrub: 1,
+          scrub: 2,
         }
       })
     });
