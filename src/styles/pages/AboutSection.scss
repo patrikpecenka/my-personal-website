@@ -24,14 +24,24 @@ h1 {
 
 .about-section-text {
   flex: 2;
+  text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+@media (width <= 1200px) {
+  .about-section-wrapper {
+    height: 100vh;
+    margin-bottom: -10rem;
+    margin-top: -15rem;
+  }
 }
 
 @media (width <= 768px) {
   .about-section-wrapper {
     margin: 5rem 0;
   }
+  
 }
 
 @media (1px <= width <= 425px) {

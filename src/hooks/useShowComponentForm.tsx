@@ -10,7 +10,7 @@ const useShowComponent = ({ selector, offset = "0px" }: showComponentsProps): vo
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) entry.target.classList.add('visible-form');
       });
     }, {
       rootMargin: offset
@@ -18,7 +18,7 @@ const useShowComponent = ({ selector, offset = "0px" }: showComponentsProps): vo
   
     const cardElements = document.querySelectorAll(selector);
     cardElements.forEach((element) => {
-      element.classList.add('hidden'); 
+      element.classList.add('hidden-form'); 
       observer.observe(element);
     });
   

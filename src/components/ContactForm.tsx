@@ -2,8 +2,13 @@ import { FC, useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { IconMapPinFilled, IconBrandLinkedin } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-import useShowComponent from 'hooks/useShowComponent';
+//import useShowComponentForm from 'hooks/useShowComponentForm';
 import { ValidationResult, validateEmail, validatePhone } from 'utils/formValidation';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ContactFormProps {
   first_name: string,
@@ -24,8 +29,55 @@ const ContactForm: FC = () => {
     phone: '',
     message: ''
   })
+
+  const main = useRef<any>(null)
+  const [isDelayed, setIsDelayed] = useState(false)
+
+  //delays useGSAP markers for correct scroll trigger behavior
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setIsDelayed(true);
+    }, 200);
+
+    return () => clearTimeout(timeOut)
+  }, []);
+
+  useGSAP(() => {
+      if(!isDelayed) {
+        return
+      }
+      gsap.fromTo(".form",
+      {
+        opacity: 0,
+        x: -500
+      },{
+        duration: 2,
+        opacity: 1,
+        x: 0,
+        delay: 0,
+        ease: "power4.inOut",
+        scrollTrigger: {
+          trigger: ".form",
+          start: "top bottom-=100",
+          end: "top center",
+          id: "contact",
+          scrub: 1,
+          
+        }
+      })
+      // ScrollTrigger.create({
+      //   trigger: ".contact-section-wrapper",
+      //   pin: true,
+      //   id: "contact-me",
+      //   start:"bottom-=500 center",
+      //   end:"bottom-=300 center",
+      //   scrub: 1,
+      //   markers: true,
+      //   toggleActions: "play reverse play reverse"
+      // });
+    },  {dependencies: [isDelayed], scope: main, revertOnUpdate: true});
   
-  useShowComponent({ selector: '.full-form-wrapper' })
+  //useShowComponentForm({ selector: '.full-form-wrapper'})
   const [t] = useTranslation("translation")
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -90,9 +142,10 @@ const ContactForm: FC = () => {
     return () => clearTimeout(timer);
   }, [successMessage]);
 
+
   return (
-    <div id="contact-me" className="full-form-wrapper">
-      <div className="contact-section-wrapper">
+    <div id="contact-me" className="full-form-wrapper" ref={main}>
+      <div className="form contact-section-wrapper">
         <div className="information-wrapper">
           <div className="information-container">
             <h1 className="info-text">
