@@ -1,5 +1,5 @@
-import data from "../constants/skills.json"
-import { FC } from "react";
+import svgData from "constants/skills";
+import { FC  } from "react";
 
 interface SkillItem {
   id: number;
@@ -9,7 +9,7 @@ interface SkillItem {
 }
 
 const SkillSet: FC = () => {
-  const skillsData: SkillItem[] = data;
+  const skillsData: SkillItem[] = svgData;
 
   return (
     <>
