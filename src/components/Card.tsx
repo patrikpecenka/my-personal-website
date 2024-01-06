@@ -8,13 +8,13 @@ interface CardProps {
   href?: string
 }
 
-const Card: FC<CardProps> = ({ id, image, title, href }) => {
+const Card: FC<CardProps> = ({ id, title, image, href }) => {
 
   return (
     <div id={id} className="card-template-wrapper">
       <div  className="card card-template-container" >
         <div className="card-template-zone">
-          <img className="card-image" src={image} />
+          <img className="card-image" src={image} loading="lazy"/>
           <p className="card-title">{title}</p>
           <div className="text-title-container">
             <p className="card-text">In sem justo, commodo ut, suscipit at, pharetra vitae, orci. In sem justo, commodo ut, suscipit at, pharetra vitae, orci. </p>

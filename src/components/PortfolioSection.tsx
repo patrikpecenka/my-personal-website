@@ -1,16 +1,17 @@
-import Card from './Card'
-import { useImages } from 'hooks/useImages'
-import { v4 as uuidv4 } from 'uuid'
+//import { useImages } from 'hooks/useImages'
 //import { IconCaretDown } from '@tabler/icons-react'
+import Card from './Card'
+import { v4 as uuidv4 } from 'uuid'
 import { gsap } from "gsap";
 import { useRef, useEffect, useState } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import data from "../constants/projects.json"
 
 gsap.registerPlugin(ScrollTrigger);
 
 const PortfolioSection = () => {
-  const { images } = useImages()
+  //const { images } = useImages()
 
   const main = useRef<any>(null)
   const [isDelayed, setIsDelayed] = useState(false)
@@ -80,13 +81,13 @@ const PortfolioSection = () => {
   }, { dependencies: [isDelayed], scope: main, revertOnUpdate: true });
 
   return (
-    <div id="projects" className="portfolio-section-wrapper">
+    <div id="projects" className="portfolio-section-wrapper" ref={main}>
       <div className="portfolio-layout-container">
         <div className="portfolio-section-title">
           <h1>My Projects</h1>
         </div>
-        <div className="portfolio-grid-container" ref={main}>
-          {images.map((image: any) => (
+        <div className="portfolio-grid-container" >
+          {data.map((image: any) => (
             <Card
               key={uuidv4()}
               id={image.id}
