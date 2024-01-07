@@ -1,8 +1,8 @@
-import cvPdf from "/Resume-CZ-ENG.pdf"
 import useShowComponent from "hooks/useShowComponent"
 //import { IconBrandGithub, } from '@tabler/icons-react'
 import { useTranslation } from "react-i18next"
 import SkillSet from "../components/SkillSet"
+import DownloadButton from "components/DownloadButton"
 
 const AboutSection = () => {
 
@@ -20,9 +20,7 @@ const AboutSection = () => {
         <div className="about-section-text">
         I like to craft solid and scalable frontend products with great user experiences.
         </div>
-        <a href={cvPdf} rel="noreferrer" target="_blank">
-          <button className="button download-cv">{t("about_section.button_cv")}</button>
-        </a>
+        <DownloadButton/>
       </div>
     </div>
   )

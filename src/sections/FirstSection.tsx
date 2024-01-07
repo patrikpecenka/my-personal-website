@@ -1,14 +1,14 @@
 import { Button } from 'react-scroll'
 import myImg from '/picture.png'
-import cvPdf from "/Resume-CZ-ENG.pdf"
 import { useTranslation } from "react-i18next"
 import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react'
 import { useGSAP } from "@gsap/react";
 import GsapAnimation from 'utils/GsapAnimation'
+import DownloadButton from 'components/DownloadButton';
 
 const FirstSection = () => {
   const [t] = useTranslation("translation")
-
+  
   useGSAP(() => {
     GsapAnimation()
   }, [])
@@ -41,9 +41,7 @@ const FirstSection = () => {
                 smooth={true}
                 duration={500}
               />
-              <a className='button-under-text' href={cvPdf} rel="noreferrer" target="_blank">
-                <button className="button download-cv button-first-section">{t("first_section.button_cv")}</button>
-              </a>
+              <DownloadButton/>
             </div>
             <div className="socials-container">
               <a href="https://www.linkedin.com/in/ppecenka/" rel="noreferrer" target='_blank'>
@@ -61,8 +59,6 @@ const FirstSection = () => {
           <img className="pfp-image" src={myImg} alt="Vector" />
         </div>
       </div>
-
-
   )
 }
 

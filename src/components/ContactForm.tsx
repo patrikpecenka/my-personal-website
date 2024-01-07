@@ -2,7 +2,6 @@ import { FC, useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { IconMapPinFilled, IconBrandLinkedin } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-//import useShowComponentForm from 'hooks/useShowComponentForm';
 import { ValidationResult, validateEmail, validatePhone } from 'utils/formValidation';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -51,10 +50,10 @@ const ContactForm: FC = () => {
         opacity: 0,
         x: -500
       },{
-        duration: 2,
+        duration: 1,
         opacity: 1,
         x: 0,
-        delay: 0,
+        delay: 1,
         ease: "power4.out",
         scrollTrigger: {
           trigger: ".form",

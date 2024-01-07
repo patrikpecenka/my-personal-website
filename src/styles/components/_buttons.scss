@@ -13,6 +13,8 @@
   font-family: $font;
   transition: color 0.2s ease-in-out;
   white-space: nowrap;
+  width: 8rem;
+  height: 3rem;
 
   &:hover {
     background-color: $color-white;
@@ -36,6 +38,10 @@
 .download-cv {
   background-color: $color-white;
   color: $color-purple-light;
+  
+  svg {
+    width: 100%;
+  }
 
   &:hover {
     background-color: $color-purple-light;
