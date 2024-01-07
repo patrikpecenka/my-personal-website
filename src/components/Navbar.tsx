@@ -56,7 +56,7 @@ const Navbar = () => {
           <li className="item-list"> 
             <Link to="about" spy={true} smooth={true} offset={-300} duration={800}>{t("navbar.text_2")}</Link> 
           </li>
-          <Button className="button navbar-button" type='submit' value={t("navbar.button_text")} to="contact-me" spy={true} smooth={true} duration={500} />
+          <Button className="button navbar-button" type='submit' value={t("navbar.button_text")} to="contact-me" spy={true} smooth={true} duration={800} />
           <SwitchButton onToggle={handleChangeLanguage}/>
         </ul>
 
