@@ -30,7 +30,7 @@
         width: 2.5rem;
         stroke-width: 1.5;
         height: 2.5rem;
-        transition: all 0.2s ease-in-out;
+        transition: color 0.2s ease-in-out;
 
         &:hover {
           color: $color-purple-light;
@@ -90,14 +90,14 @@
 .pfp-image {
   max-width: 32rem;
   border-radius:22% 78% 49% 51% / 31% 44% 56% 69%;
-  animation: animate 2s infinite ease alternate;
+  //animation: animate 2s infinite ease alternate;
 }
 
-@keyframes animate {
-  to{
-    transform: translateY(20px)
-  }
-}
+// @keyframes animate {
+//   to{
+//     transform: translateY(20px)
+//   }
+// }
 
 @media (width <= 768px) {
     .first-section-wrapper {

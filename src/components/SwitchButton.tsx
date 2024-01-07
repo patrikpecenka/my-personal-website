@@ -19,7 +19,7 @@ const SwitchButton: FC<SwitchButtonProps> = ({onToggle}) => {
 
   return (
     <>
-      <label className="wraper">
+      <label className="wraper switch-button">
         <div className="switch-wrap">
           <input 
             type="checkbox"

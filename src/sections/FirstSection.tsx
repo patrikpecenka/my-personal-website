@@ -3,10 +3,15 @@ import myImg from '/picture.png'
 import cvPdf from "/Resume-CZ-ENG.pdf"
 import { useTranslation } from "react-i18next"
 import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react'
+import { useGSAP } from "@gsap/react";
+import GsapAnimation from 'utils/GsapAnimation'
 
 const FirstSection = () => {
-
   const [t] = useTranslation("translation")
+
+  useGSAP(() => {
+    GsapAnimation()
+  }, [])
 
   return (
 
@@ -18,9 +23,9 @@ const FirstSection = () => {
               <div className="front">FRONT</div>
               <div className="end">END</div>
             </div>
-            <div className='main_text_1' >{t("first_section.main_text_1")}</div>
-            <div className='main_text_2' >{t("first_section.main_text_2")}</div>
-            <div className='subtext_1'>
+            <div className='t-fs main_text_1' >{t("first_section.main_text_1")}</div>
+            <div className='t-fs main_text_2' >{t("first_section.main_text_2")}</div>
+            <div className='t-fs subtext_1'>
             {t("first_section.subtext_1")}
               <br />
               <br />
@@ -29,14 +34,14 @@ const FirstSection = () => {
 
             <div className="button-container">
               <Button
-                className="button portfolio button-first-section"
+                className="button-under-text button portfolio button-first-section"
                 type='submit' value={t("first_section.button_p")}
                 to="projects"
                 spy={true}
                 smooth={true}
                 duration={500}
               />
-              <a href={cvPdf} rel="noreferrer" target="_blank">
+              <a className='button-under-text' href={cvPdf} rel="noreferrer" target="_blank">
                 <button className="button download-cv button-first-section">{t("first_section.button_cv")}</button>
               </a>
             </div>
