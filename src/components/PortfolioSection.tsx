@@ -36,7 +36,7 @@ const PortfolioSection = () => {
       {
         scale: 0.5,
         opacity: 0,
-        y: 200,
+        x: 200,
         stagger: {
           amount: 2,
           from: "start",

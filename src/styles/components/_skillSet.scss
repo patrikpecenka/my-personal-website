@@ -38,18 +38,29 @@
       aspect-ratio: 2/2;
       object-fit: contain;
       margin: 0.5rem;
-      transition: all 0.3s ease-in-out;
-  
-      &:hover {
-        filter: invert(30%);
+      transition: all .2s ease-in-out;
 
+      &:hover {
+        transform: scale(1.1) rotateZ(-10deg);
+        animation: z-axis-anim 1s ease-in-out 0s infinite alternate;
         +.skill-tooltip {
           opacity: 1;
           visibility: visible;
-          
         }
       }
     }
+  }
+}
+
+@keyframes z-axis-anim {
+  0% {
+    transform: rotateZ(0);
+  }
+  50% {
+    transform: rotateZ(-10deg); 
+  }
+  100% {
+    transform: rotateZ(10deg); 
   }
 }
 
