@@ -1,7 +1,7 @@
 import Navbar from "components/Navbar";
-import FirstSection from "components/FirstSection";
-import AboutSection from "components/AboutSection";
-import PortfolioSection from "components/PortfolioSection";
+import FirstSection from "sections/FirstSection";
+import AboutSection from "sections/AboutSection";
+import PortfolioSection from "sections/PortfolioSection";
 import ContactForm from "components/ContactForm";
 
 const AppShell = () => {

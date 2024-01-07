@@ -1,6 +1,6 @@
 //import { useImages } from 'hooks/useImages'
 //import { IconCaretDown } from '@tabler/icons-react'
-import Card from './Card'
+import Card from '../components/Card'
 import { v4 as uuidv4 } from 'uuid'
 import { gsap } from "gsap";
 import { useRef, useEffect, useState } from "react"

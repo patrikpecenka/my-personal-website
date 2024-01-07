@@ -2,7 +2,7 @@ import cvPdf from "/Resume-CZ-ENG.pdf"
 import useShowComponent from "hooks/useShowComponent"
 //import { IconBrandGithub, } from '@tabler/icons-react'
 import { useTranslation } from "react-i18next"
-import SkillSet from "./SkillSet"
+import SkillSet from "../components/SkillSet"
 
 const AboutSection = () => {
 
