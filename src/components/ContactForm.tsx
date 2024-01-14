@@ -42,41 +42,41 @@ const ContactForm: FC = () => {
   }, []);
 
   useGSAP(() => {
-      if(!isDelayed) {
-        return
-      }
-      gsap.fromTo(".form",
+    if (!isDelayed) {
+      return
+    }
+    gsap.fromTo(".form",
       {
         opacity: 0,
         x: -500
-      },{
-        duration: 1,
-        opacity: 1,
-        x: 0,
-        delay: 1,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: ".form",
-          start: "top bottom-=50",
-          end: "top center",
-          id: "contact",
-          scrub: 2,
-        }
-      })
-      // ScrollTrigger.create({
-      //   trigger: ".contact-section-wrapper",
-      //   pin: true,
-      //   id: "contact-me",
-      //   start:"bottom-=500 center",
-      //   end:"bottom-=300 center",
-      //   scrub: 1,
-      //   markers: true,
-      //   toggleActions: "play reverse play reverse"
-      // });
-    },  {dependencies: [isDelayed], scope: main, revertOnUpdate: true});
-  
+      }, {
+      duration: 1,
+      opacity: 1,
+      x: 0,
+      delay: 1,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".form",
+        start: "top bottom-=50",
+        end: "top center",
+        id: "contact",
+        scrub: 2,
+      }
+    })
+    // ScrollTrigger.create({
+    //   trigger: ".contact-section-wrapper",
+    //   pin: true,
+    //   id: "contact-me",
+    //   start:"bottom-=500 center",
+    //   end:"bottom-=300 center",
+    //   scrub: 1,
+    //   markers: true,
+    //   toggleActions: "play reverse play reverse"
+    // });
+  }, { dependencies: [isDelayed], scope: main, revertOnUpdate: true });
+
   //useShowComponentForm({ selector: '.full-form-wrapper'})
-  const [t] = useTranslation("translation")
+  const { t } = useTranslation("translation")
   const formRef = useRef<HTMLFormElement>(null);
 
   const onChange = (e: any) => {
@@ -114,7 +114,7 @@ const ContactForm: FC = () => {
         formRef.current!,
         'VMLj4xeAHls4ctRDH',
       );
-    
+
       setFormData({
         first_name: '',
         last_name: '',
@@ -147,26 +147,26 @@ const ContactForm: FC = () => {
         <div className="information-wrapper">
           <div className="information-container">
             <h1 className="info-text">
-              {t("contact_form.info_text_1")} 
+              {t("contact_form.info_text_1")}
               <span data-highlight="highlight"> {t("contact_form.info_text_2")} </span> {t("contact_form.info_text_3")}
             </h1>
-              <div className="icons-text-section">
-                <a href="https://www.linkedin.com/in/ppecenka/" rel="noreferrer" target='_blank'>
-                  <p>
-                    <span data-highlight="icon">
-                      <IconBrandLinkedin/>
-                    </span> 
-                      {t("contact_form.linkedin")}
-                  </p>
-                </a>
-                {/*<p> <span data-highlight="icon"><IconPhoneFilled/></span> +420 723 866 407</p>*/}
+            <div className="icons-text-section">
+              <a href="https://www.linkedin.com/in/ppecenka/" rel="noreferrer" target='_blank'>
                 <p>
                   <span data-highlight="icon">
-                    <IconMapPinFilled/>
+                    <IconBrandLinkedin />
                   </span>
-                    {t("contact_form.adress")}
+                  {t("contact_form.linkedin")}
                 </p>
-              </div>
+              </a>
+              {/*<p> <span data-highlight="icon"><IconPhoneFilled/></span> </p>*/}
+              <p>
+                <span data-highlight="icon">
+                  <IconMapPinFilled />
+                </span>
+                {t("contact_form.adress")}
+              </p>
+            </div>
           </div>
         </div>
 
@@ -176,51 +176,51 @@ const ContactForm: FC = () => {
               <h4>{t("contact_form.h4_text")}</h4>
               <div className="name-group">
                 <label className='name-label'>
-                  <input  
-                    placeholder={t("contact_form.ph_fname")} 
-                    type="text" 
-                    name="first_name" 
-                    value={formData.first_name} 
+                  <input
+                    placeholder={t("contact_form.ph_fname")}
+                    type="text"
+                    name="first_name"
+                    value={formData.first_name}
                     onChange={onChange}
                   />
                 </label>
                 <label className='last-name-label'>
-                  <input 
-                    placeholder={t("contact_form.ph_lname")} 
-                    type="text" 
-                    name="last_name" 
-                    value={formData.last_name} 
-                    onChange={onChange} 
+                  <input
+                    placeholder={t("contact_form.ph_lname")}
+                    type="text"
+                    name="last_name"
+                    value={formData.last_name}
+                    onChange={onChange}
                   />
                 </label>
               </div>
               <div className="contact-group">
                 <label className='email-label'>
-                  <input 
-                    placeholder={t("contact_form.ph_email")} 
-                    name="email" 
-                    value={formData.email} 
-                    onChange={onChange} 
+                  <input
+                    placeholder={t("contact_form.ph_email")}
+                    name="email"
+                    value={formData.email}
+                    onChange={onChange}
                   />
                   <p className='error-paragraph'>{emailError}</p>
                 </label>
                 <label className='phone-label'>
-                  <input 
-                    placeholder={t("contact_form.ph_phone")} 
-                    type="tel" 
-                    name="phone" 
-                    value={formData.phone} 
-                    onChange={onChange} 
+                  <input
+                    placeholder={t("contact_form.ph_phone")}
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={onChange}
                   />
                   <p className='error-paragraph'>{phoneError}</p>
                 </label>
               </div>
               <label className='message-label'>
-                <textarea 
-                  placeholder={t("contact_form.ph_message")} 
-                  name="message" 
-                  value={formData.message} 
-                  onChange={onChange} 
+                <textarea
+                  placeholder={t("contact_form.ph_message")}
+                  name="message"
+                  value={formData.message}
+                  onChange={onChange}
                 />
               </label>
               <label className="error-label">

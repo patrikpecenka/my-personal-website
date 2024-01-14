@@ -6,20 +6,22 @@ import { gsap } from "gsap";
 import { useRef, useEffect, useState } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import data from "../constants/projects.json"
+import projectsData from 'constants/projectsData';
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface ImageProps {
   webHref: string | undefined,
   gitHref: string | undefined,
-  id: string,
+  id: number,
   download_url: string | undefined,
   title: string,
-  active: boolean
+  active: boolean,
+  text?: string
 }
 
 const PortfolioSection = () => {
+  const cardData: ImageProps[] = projectsData()
 
   const main = useRef<any>(null)
   const [isDelayed, setIsDelayed] = useState(false)
@@ -86,7 +88,6 @@ const PortfolioSection = () => {
           }
         })
     },);
-
   }, { dependencies: [isDelayed], scope: main, revertOnUpdate: true });
 
   return (
@@ -96,8 +97,9 @@ const PortfolioSection = () => {
           <h1>My Projects</h1>
         </div>
         <div className="portfolio-grid-container" >
-          {data.map((image: ImageProps) => (
+          {cardData.map((image: ImageProps) => (
             <Card
+              text={image.text}
               active={image.active}
               key={uuidv4()}
               id={image.id}

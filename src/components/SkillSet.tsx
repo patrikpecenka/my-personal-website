@@ -1,5 +1,5 @@
 import svgData from "constants/skills";
-import { FC  } from "react";
+import { FC } from "react";
 
 interface SkillItem {
   id: number;
@@ -14,17 +14,17 @@ const SkillSet: FC = () => {
   return (
     <>
       <div className="skill-container">
-        {skillsData.map((item: SkillItem) => 
-        <div key={item.id} className="skill-image-container">
-          <img
-            src={item.svg}
-            alt={item.alt} 
-            className="skill-image" 
-          />
-          <div className="skill-tooltip">
-            <span>{item.tooltip}</span>
+        {skillsData.map((item: SkillItem) =>
+          <div key={item.id} className="skill-image-container">
+            <img
+              src={item.svg}
+              alt={item.alt}
+              className="skill-image"
+            />
+            <div className="skill-tooltip">
+              <span>{item.tooltip}</span>
+            </div>
           </div>
-        </div>
         )}
       </div>
     </>

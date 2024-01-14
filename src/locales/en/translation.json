@@ -26,22 +26,26 @@
     "ph_phone": "Phone",
     "ph_message": "Message..."
   },
-
-  "about_section" : {
+  "about_section": {
     "title": "My Skills",
     "main_text": "",
     "button_cv": "Download CV"
   },
-
-
   "errors": {
     "email": "This is not a valid email address",
     "email_required": "Email is required",
     "phone": "Please enter a valid phone number with country code for example +420",
     "phone_required": "Phone number is required"
   },
-
   "success": {
     "form_success": "Message was sent successfully"
+  },
+  "portfolio_projects": {
+    "project_1": "english project 1",
+    "project_2": "english project 2",
+    "project_3": "",
+    "project_4": "",
+    "project_5": "",
+    "project_6": ""
   }
 }

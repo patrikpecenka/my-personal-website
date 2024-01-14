@@ -26,21 +26,26 @@
     "ph_phone": "Telefon",
     "ph_message": "Zpráva..."
   },
-
-  "about_section" : {
+  "about_section": {
     "title": "Mé Dovednosti",
     "main_text": "",
     "button_cv": "Stáhnout CV"
   },
-
   "errors": {
     "email": "Prosím zadejte správný formát emailu",
     "email_required": "Email musí být vyplněný",
     "phone": "Prosím zadejte správný formát telefoního čísla s předvolbou např. +420",
     "phone_required": "Telefoní číslo musí být vyplněno"
   },
-
   "success": {
     "form_success": "Zpráva byla v pořádku odeslána"
+  },
+  "portfolio_projects": {
+    "project_1": "česky projekt 1",
+    "project_2": "česky projekt 2",
+    "project_3": "",
+    "project_4": "",
+    "project_5": "",
+    "project_6": ""
   }
 }

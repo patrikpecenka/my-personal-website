@@ -7,7 +7,7 @@ import GsapAnimation from 'utils/GsapAnimation'
 import DownloadButton from 'components/DownloadButton';
 
 const FirstSection = () => {
-  const [t] = useTranslation("translation")
+  const { t } = useTranslation("translation")
 
   useGSAP(() => {
     GsapAnimation()
