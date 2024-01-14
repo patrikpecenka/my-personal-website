@@ -57,7 +57,7 @@ const PortfolioSection = () => {
             start: "top-=400 bottom-=200",
             end: "top+=800 bottom-=100",
             id: "card",
-            markers: true,
+            markers: false,
             scrub: 1,
           }
         })
