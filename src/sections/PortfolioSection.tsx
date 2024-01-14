@@ -10,8 +10,16 @@ import data from "../constants/projects.json"
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface ImageProps {
+  webHref: string | undefined,
+  gitHref: string | undefined,
+  id: string,
+  download_url: string | undefined,
+  title: string,
+  active: boolean
+}
+
 const PortfolioSection = () => {
-  //const { images } = useImages()
 
   const main = useRef<any>(null)
   const [isDelayed, setIsDelayed] = useState(false)
@@ -33,51 +41,51 @@ const PortfolioSection = () => {
     //desktop setup
     mm.add("(min-width: 768px)", () => {
       gsap.from(".card",
-      {
-        scale: 0.5,
-        opacity: 0,
-        x: 200,
-        stagger: {
-          amount: 2,
-          from: "start",
-          ease: "power2.out"
-        },
-        duration: 5,
-        ease: "power4.inOut",
-        scrollTrigger: {
-          trigger: ".card",
-          start: "top-=400 bottom-=200",
-          end: "top+=400 bottom-=100",
-          id: "card",
-          markers: false,
-          scrub: 1,
-        }
-      })
-    });
+        {
+          scale: 0.5,
+          opacity: 0,
+          x: 200,
+          stagger: {
+            amount: 2,
+            from: "start",
+            ease: "power2.out"
+          },
+          duration: 5,
+          ease: "power4.inOut",
+          scrollTrigger: {
+            trigger: ".card",
+            start: "top-=400 bottom-=200",
+            end: "top+=800 bottom-=100",
+            id: "card",
+            markers: true,
+            scrub: 1,
+          }
+        })
+    },);
 
     //mobile setup
     mm.add("(max-width: 768px)", () => {
       gsap.from(".card",
-      {
-        scale: 0.3,
-        opacity: 0,
-        y: 200,
-        stagger: {
-          amount: 1,
-          from: "start"
-        },
-        duration: 2.5,
-        ease: "power4.inOut",
-        scrollTrigger: {
-          trigger: ".card",
-          start: "top bottom-=200",
-          end: "top+=500 bottom-=200",
-          id: "card",
-          markers: false,
-          scrub: 2,
-        }
-      })
-    });
+        {
+          scale: 0.3,
+          opacity: 0,
+          y: 200,
+          stagger: {
+            amount: 1,
+            from: "start"
+          },
+          duration: 2.5,
+          ease: "power4.inOut",
+          scrollTrigger: {
+            trigger: ".card",
+            start: "top bottom-=200",
+            end: "top+=500 bottom-=200",
+            id: "card",
+            markers: false,
+            scrub: 2,
+          }
+        })
+    },);
 
   }, { dependencies: [isDelayed], scope: main, revertOnUpdate: true });
 
@@ -88,12 +96,15 @@ const PortfolioSection = () => {
           <h1>My Projects</h1>
         </div>
         <div className="portfolio-grid-container" >
-          {data.map((image: any) => (
+          {data.map((image: ImageProps) => (
             <Card
+              active={image.active}
               key={uuidv4()}
               id={image.id}
               image={image.download_url}
-              title={image.author}
+              title={image.title}
+              gitHref={image.gitHref}
+              webHref={image.webHref}
             />
           ))}
         </div>

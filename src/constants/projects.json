@@ -1,38 +1,50 @@
 [
   {
     "id": "1",
-    "download_url": "https://www.gstatic.com/webp/gallery/1.jpg",
-    "author": "Author 1",
-    "href": "https://www.example.com/book1"
+    "download_url": "https://www.gstatic.com/webp/gallery/2.webp",
+    "title": "Title 1",
+    "webHref": "https://www.example.com/book1",
+    "gitHref": "",
+    "active": true
   },
   {
     "id": "2",
     "download_url": "https://www.gstatic.com/webp/gallery/2.webp",
-    "author": "Author 2",
-    "href": "https://www.example.com/book2"
+    "title": "Title 2",
+    "webHref": "https://www.example.com/book2",
+    "gitHref": "",
+    "active": true
   },
   {
     "id": "3",
-    "download_url": "https://www.gstatic.com/webp/gallery/4.webp",
-    "author": "Author 3",
-    "href": "https://www.example.com/book3"
+    "download_url": "",
+    "title": "Work In Progress",
+    "webHref": "",
+    "gitHref": "",
+    "active": false
   },
   {
     "id": "4",
-    "download_url": "https://www.gstatic.com/webp/gallery/5.webp",
-    "author": "Author 4",
-    "href": "https://www.example.com/book4"
+    "download_url": "",
+    "title": "Work In Progress",
+    "webHref": "",
+    "gitHref": "",
+    "active": false
   },
   {
     "id": "5",
-    "download_url": "https://www.gstatic.com/webp/gallery/5.webp",
-    "author": "Author 5",
-    "href": "https://www.example.com/book5"
+    "download_url": "",
+    "title": "Work In Progress",
+    "webHref": "",
+    "gitHref": "",
+    "active": false
   },
   {
     "id": "6",
-    "download_url": "https://www.gstatic.com/webp/gallery/5.webp",
-    "author": "Author 6",
-    "href": "https://www.example.com/book6"
+    "download_url": "",
+    "title": "Work In Progress",
+    "webHref": "",
+    "gitHref": "",
+    "active": false
   }
 ]

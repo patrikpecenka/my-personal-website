@@ -60,7 +60,7 @@ const ContactForm: FC = () => {
           start: "top bottom-=50",
           end: "top center",
           id: "contact",
-          scrub: 2
+          scrub: 2,
         }
       })
       // ScrollTrigger.create({

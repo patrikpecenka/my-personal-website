@@ -1,11 +1,11 @@
 import { gsap } from "gsap";
 
 const GsapAnimation = () => {
-    gsap.from(".navbar-logo", 0.5, {
-      opacity: 0,
-      x: -20,
-      ease: "power2.in"
-    }),
+  gsap.from(".navbar-logo", 0.5, {
+    opacity: 0,
+    x: -20,
+    ease: "power2.in"
+  }),
 
     gsap.from("ul li", 0.5, {
       opacity: 0,
@@ -65,12 +65,12 @@ const GsapAnimation = () => {
       delay: 1.5
     }),
 
-    gsap.from(".button-container .button-under-text", 0.8, {
+    gsap.from(".button-container .button-under-text", 0.5, {
       opacity: 0,
       x: -40,
-      delay: 3.5,
+      delay: 3,
       stagger: {
-        amount: 1,
+        amount: 0.8,
         from: "start",
         ease: "power2.in"
       }
@@ -79,14 +79,14 @@ const GsapAnimation = () => {
     gsap.from(".socials-container a svg", 2, {
       opacity: 0,
       y: 40,
-      delay: 3.8,
+      delay: 3.4,
       stagger: {
         amount: 0.8,
         from: "start",
         ease: "power2.in"
       }
     })
-    return null;
+  return null;
 }
 
 export default GsapAnimation;
